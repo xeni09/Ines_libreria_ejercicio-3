@@ -17,9 +17,9 @@ def call(Map config = [:]) {
         // Evaluar el resultado del Quality Gate y los parámetros booleanos
         if (qg.status != 'OK') {
             if (abortPipeline || abortOnQualityGateFail) {
-                error "Abortando el pipeline debido a la falla en el Quality Gate"
+                error "Abortando el pipeline debido al error en el Quality Gate"
             } else {
-                echo "Continuando con el pipeline a pesar de la falla en el Quality Gate"
+                echo "Continuando con el pipeline a pesar del error en el Quality Gate"
             }
         } else {
             echo "Quality Gate aprobado"
